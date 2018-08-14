@@ -11,6 +11,7 @@ namespace StringCalculatorTDD
 		public static int Add(string numbers)
 		{
 			string[] numbersArray = numbers.Split(',');
+			int summedAnswer = 0;
 			if (numbersArray.Length > 2)
 			{
 				throw new BadInputException(BadInputException.BadInputTypes.TooManyNumbers);
@@ -19,13 +20,13 @@ namespace StringCalculatorTDD
 			{
 				foreach (string number in numbersArray)
 				{
-					if (number.Length != 0)
+					if (number.Trim(' ').Length != 0)
 					{
-						int.Parse(number);
+						summedAnswer += int.Parse(number);
 					}
 				}
 			}
-			return 0;
+			return summedAnswer;
 		}
 	}
 }

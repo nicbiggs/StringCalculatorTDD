@@ -33,5 +33,17 @@ namespace StringCalculatorTest
 		{
 			Assert.AreEqual(0,Calculator.Add(""));
 		}
+
+		[TestMethod]
+		public void WhenOneNumberIsUsedReturnsThatNumber()
+		{
+			Assert.AreEqual(3, Calculator.Add("3"));
+		}
+
+		[TestMethod]
+		public void WhenTwoNumbersAreUsedReturnsTheSumOfThoseNumbers()
+		{
+			Assert.AreEqual(5 + 7, Calculator.Add("5,7"));
+		}
 	}
 }
