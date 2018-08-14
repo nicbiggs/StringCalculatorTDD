@@ -19,7 +19,14 @@ namespace StringCalculatorTDD
 
 		private void SubmitBtn_Click(object sender, EventArgs e)
 		{
-			AnswerLbl.Text = Calculator.Add(InputBox.Text).ToString();
+			try
+			{
+				AnswerLbl.Text = Calculator.Add(InputBox.Text).ToString();
+			}
+			catch (FormatException ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }

@@ -8,13 +8,6 @@ namespace StringCalculatorTest
 	public class CalculatorTest
 	{
 		[TestMethod]
-		[ExpectedException(typeof(BadInputException))]
-		public void WhenMoreThan2NumbersAreUsedThenExceptionIsThrown()
-		{
-			Calculator.Add("1,2,3");
-		}
-
-		[TestMethod]
 		public void When2NumbersAreUsedThenNoExceptionIsThrown()
 		{
 			Calculator.Add("1,2");
@@ -44,6 +37,12 @@ namespace StringCalculatorTest
 		public void WhenTwoNumbersAreUsedReturnsTheSumOfThoseNumbers()
 		{
 			Assert.AreEqual(5 + 7, Calculator.Add("5,7"));
+		}
+
+		[TestMethod]
+		public void WhenMultipleNumbersAreUsedReturnsTheSumOfThoseNumbers()
+		{
+			Assert.AreEqual(5 + 17 + 2 + 81 + 6, Calculator.Add("5,17,2,81,6"));
 		}
 	}
 }
