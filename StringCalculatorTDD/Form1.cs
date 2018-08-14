@@ -16,5 +16,10 @@ namespace StringCalculatorTDD
 		{
 			InitializeComponent();
 		}
+
+		private void SubmitBtn_Click(object sender, EventArgs e)
+		{
+			AnswerLbl.Text = Calculator.Add(InputBox.Text).ToString();
+		}
 	}
 }

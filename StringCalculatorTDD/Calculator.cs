@@ -8,7 +8,7 @@ namespace StringCalculatorTDD
 {
 	public static class Calculator
 	{
-		public static void Add(string numbers)
+		public static int Add(string numbers)
 		{
 			string[] numbersArray = numbers.Split(',');
 			if (numbersArray.Length > 2)
@@ -19,9 +19,13 @@ namespace StringCalculatorTDD
 			{
 				foreach (string number in numbersArray)
 				{
-					int.Parse(number);
+					if (number.Length != 0)
+					{
+						int.Parse(number);
+					}
 				}
 			}
+			return 0;
 		}
 	}
 }

@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.SubmitBtn = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.InputBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.AnswerLbl = new System.Windows.Forms.Label();
@@ -43,13 +43,14 @@
 			this.SubmitBtn.TabIndex = 0;
 			this.SubmitBtn.Text = "Submit";
 			this.SubmitBtn.UseVisualStyleBackColor = true;
+			this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
 			// 
-			// textBox1
+			// InputBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(47, 57);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 20);
-			this.textBox1.TabIndex = 1;
+			this.InputBox.Location = new System.Drawing.Point(47, 57);
+			this.InputBox.Name = "InputBox";
+			this.InputBox.Size = new System.Drawing.Size(100, 20);
+			this.InputBox.TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -84,7 +85,7 @@
 			this.Controls.Add(this.AnswerLbl);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.InputBox);
 			this.Controls.Add(this.SubmitBtn);
 			this.Name = "Form1";
 			this.Text = "Form1";
@@ -96,7 +97,7 @@
 		#endregion
 
 		private System.Windows.Forms.Button SubmitBtn;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox InputBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label AnswerLbl;

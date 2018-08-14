@@ -27,5 +27,11 @@ namespace StringCalculatorTest
 		{
 			Calculator.Add("1,t");
 		}
+
+		[TestMethod]
+		public void WhenEmptyStringIsUsedThenReturnZero()
+		{
+			Assert.AreEqual(0,Calculator.Add(""));
+		}
 	}
 }
