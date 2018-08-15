@@ -37,7 +37,7 @@
 			// 
 			// SubmitBtn
 			// 
-			this.SubmitBtn.Location = new System.Drawing.Point(57, 148);
+			this.SubmitBtn.Location = new System.Drawing.Point(61, 243);
 			this.SubmitBtn.Name = "SubmitBtn";
 			this.SubmitBtn.Size = new System.Drawing.Size(75, 23);
 			this.SubmitBtn.TabIndex = 0;
@@ -48,8 +48,9 @@
 			// InputBox
 			// 
 			this.InputBox.Location = new System.Drawing.Point(47, 57);
+			this.InputBox.Multiline = true;
 			this.InputBox.Name = "InputBox";
-			this.InputBox.Size = new System.Drawing.Size(100, 20);
+			this.InputBox.Size = new System.Drawing.Size(100, 106);
 			this.InputBox.TabIndex = 1;
 			// 
 			// label1
@@ -63,7 +64,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(44, 88);
+			this.label2.Location = new System.Drawing.Point(48, 183);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(40, 13);
 			this.label2.TabIndex = 3;
@@ -72,7 +73,7 @@
 			// AnswerLbl
 			// 
 			this.AnswerLbl.AutoSize = true;
-			this.AnswerLbl.Location = new System.Drawing.Point(84, 113);
+			this.AnswerLbl.Location = new System.Drawing.Point(88, 208);
 			this.AnswerLbl.Name = "AnswerLbl";
 			this.AnswerLbl.Size = new System.Drawing.Size(0, 13);
 			this.AnswerLbl.TabIndex = 4;
@@ -81,7 +82,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(212, 212);
+			this.ClientSize = new System.Drawing.Size(212, 297);
 			this.Controls.Add(this.AnswerLbl);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);

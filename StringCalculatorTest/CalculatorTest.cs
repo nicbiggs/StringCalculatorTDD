@@ -44,5 +44,11 @@ namespace StringCalculatorTest
 		{
 			Assert.AreEqual(5 + 17 + 2 + 81 + 6, Calculator.Add("5,17,2,81,6"));
 		}
+
+		[TestMethod]
+		public void WhenNewLinesAreUsedBetweenNumbersTreatsThemAsCommas()
+		{
+			Assert.AreEqual(5 + 7 + 8, Calculator.Add("5,7\n8"));
+		}
 	}
 }

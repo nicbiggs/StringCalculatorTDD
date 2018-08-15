@@ -10,7 +10,8 @@ namespace StringCalculatorTDD
 	{
 		public static int Add(string numbers)
 		{
-			string[] numbersArray = numbers.Split(',');
+			string[] delimiters = { ",", "\n"};
+			string[] numbersArray = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 			int summedAnswer = 0;
 
 			foreach (string number in numbersArray)
