@@ -50,5 +50,11 @@ namespace StringCalculatorTest
 		{
 			Assert.AreEqual(5 + 7 + 8, Calculator.Add("5,7\n8"));
 		}
+
+		[TestMethod]
+		public void WhenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers()
+		{
+			Assert.AreEqual(3 + 20 + 1, Calculator.Add("//;\n3;20;1"));
+		}
 	}
 }

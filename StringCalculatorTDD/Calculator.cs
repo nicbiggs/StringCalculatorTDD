@@ -8,10 +8,10 @@ namespace StringCalculatorTDD
 {
 	public static class Calculator
 	{
-		public static int Add(string numbers)
+
+		private static int Add(string numbers, string delimiters)
 		{
-			string[] delimiters = { ",", "\n"};
-			string[] numbersArray = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+			string[] numbersArray = numbers.Split(delimiters.ToCharArray());
 			int summedAnswer = 0;
 
 			foreach (string number in numbersArray)
@@ -22,6 +22,21 @@ namespace StringCalculatorTDD
 				}
 			}
 			return summedAnswer;
+		}
+
+		public static int Add(string numbers)
+		{
+			string delimiters = ",\n";
+			string numbersWithoutDelimiter = numbers;
+
+			if (numbers.StartsWith("//"))
+			{
+				int delimiterIndex = numbers.IndexOf("//") + 2;
+				delimiters = numbers.Substring(delimiterIndex, 1);
+				numbersWithoutDelimiter = numbers.Substring(numbers.IndexOf('\n') + 1);
+			}
+
+			return Add(numbersWithoutDelimiter, delimiters);
 		}
 	}
 }
