@@ -48,13 +48,13 @@ namespace StringCalculatorTest
 		[TestMethod]
 		public void WhenNewLinesAreUsedBetweenNumbersTreatsThemAsCommas()
 		{
-			Assert.AreEqual(5 + 7 + 8, Calculator.Add("5,7\n8"));
+			Assert.AreEqual(5 + 7 + 8, Calculator.Add("5,7" + Environment.NewLine + "8"));
 		}
 
 		[TestMethod]
 		public void WhenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers()
 		{
-			Assert.AreEqual(3 + 20 + 1, Calculator.Add("//;\n3;20;1"));
+			Assert.AreEqual(3 + 20 + 1, Calculator.Add("//;" + Environment.NewLine + "3;20;1"));
 		}
 
 		[TestMethod]
@@ -86,5 +86,13 @@ namespace StringCalculatorTest
 		{
 			Assert.AreEqual(4+2,Calculator.Add("1200,1500,4,2"));
 		}
+
+		[TestMethod]
+		public void WhenSpecifiedDelimiterisMoreThanOneCharacterThenItIsUsedToSeparateNumbers()
+		{
+			Assert.AreEqual(5 + 15 + 30, Calculator.Add("//[----]" + Environment.NewLine + "5----15----30"));
+		}
+
+
 	}
 }

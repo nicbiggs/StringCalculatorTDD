@@ -8,10 +8,34 @@ namespace StringCalculatorTDD
 {
 	public static class Calculator
 	{
-
-		private static int Add(string numbers, string delimiters)
+		public static int Add(string numbers)
 		{
-			string[] numbersArray = numbers.Split(delimiters.ToCharArray());
+			string[] delimiters = { ",", Environment.NewLine };
+			string numbersWithoutDelimiter = numbers;
+
+			if (numbers.StartsWith("//"))
+			{
+				int delimiterIndex = numbers.IndexOf("//") + 2;
+				int endOfDelimiterIndex = 0;
+				int startOfNumbers = 0;
+				if (numbers.IndexOf(Environment.NewLine) > -1)
+				{
+					endOfDelimiterIndex = numbers.IndexOf(Environment.NewLine);
+					startOfNumbers = endOfDelimiterIndex + Environment.NewLine.Length;
+				}
+				string customDelimiter = numbers.Substring(delimiterIndex, endOfDelimiterIndex - delimiterIndex);
+				customDelimiter = customDelimiter.Trim('[', ']');
+
+				delimiters = new string[] { customDelimiter };
+				numbersWithoutDelimiter = numbers.Substring(startOfNumbers);
+			}
+
+			return Add(numbersWithoutDelimiter, delimiters);
+		}
+
+		private static int Add(string numbers, string[] delimiters)
+		{
+			string[] numbersArray = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 			int summedAnswer = 0;
 			List<string> negativeNumbers = new List<string>();
 
@@ -38,21 +62,6 @@ namespace StringCalculatorTDD
 			{
 				return summedAnswer;
 			}
-		}
-
-		public static int Add(string numbers)
-		{
-			string delimiters = ",\n";
-			string numbersWithoutDelimiter = numbers;
-
-			if (numbers.StartsWith("//"))
-			{
-				int delimiterIndex = numbers.IndexOf("//") + 2;
-				delimiters = numbers.Substring(delimiterIndex, 1);
-				numbersWithoutDelimiter = numbers.Substring(numbers.IndexOf('\n') + 1);
-			}
-
-			return Add(numbersWithoutDelimiter, delimiters);
 		}
 	}
 }
