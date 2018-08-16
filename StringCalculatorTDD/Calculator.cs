@@ -19,13 +19,14 @@ namespace StringCalculatorTDD
 			{
 				if (number.Trim(' ').Length != 0)
 				{
-					if (int.Parse(number) >= 0)
-					{
-						summedAnswer += int.Parse(number);
-					}
-					else
+					int numberParsedOut = int.Parse(number);
+					if (numberParsedOut < 0)
 					{
 						negativeNumbers.Add(number);
+					}
+					else if (numberParsedOut <= 1000)
+					{
+						summedAnswer += numberParsedOut;
 					}
 				}
 			}

@@ -80,5 +80,11 @@ namespace StringCalculatorTest
 			Assert.IsTrue(message.Contains("-6"));
 			Assert.IsTrue(message.Contains("-7"));
 		}
+
+		[TestMethod]
+		public void WhenNumbersBiggerThan1000AreUsedThenIgnore()
+		{
+			Assert.AreEqual(4+2,Calculator.Add("1200,1500,4,2"));
+		}
 	}
 }
