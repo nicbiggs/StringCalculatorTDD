@@ -37,7 +37,7 @@
 			// 
 			// SubmitBtn
 			// 
-			this.SubmitBtn.Location = new System.Drawing.Point(105, 242);
+			this.SubmitBtn.Location = new System.Drawing.Point(105, 264);
 			this.SubmitBtn.Name = "SubmitBtn";
 			this.SubmitBtn.Size = new System.Drawing.Size(75, 23);
 			this.SubmitBtn.TabIndex = 0;
@@ -47,26 +47,26 @@
 			// 
 			// InputBox
 			// 
-			this.InputBox.Location = new System.Drawing.Point(51, 71);
+			this.InputBox.Location = new System.Drawing.Point(44, 93);
 			this.InputBox.Multiline = true;
 			this.InputBox.Name = "InputBox";
-			this.InputBox.Size = new System.Drawing.Size(192, 106);
+			this.InputBox.Size = new System.Drawing.Size(206, 106);
 			this.InputBox.TabIndex = 1;
 			// 
 			// label1
 			// 
-			this.label1.Location = new System.Drawing.Point(48, 9);
+			this.label1.Location = new System.Drawing.Point(41, 9);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(195, 59);
+			this.label1.Size = new System.Drawing.Size(209, 71);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Input String (numbers separated by commas, separate lines, or start with your pre" +
-    "ferred delimiter that you will use, for example: \"//[delimiter]\\n[numbers]\" plea" +
-    "se):\r\n";
+    "ferred delimiter that you will use, for example: \"//[delimiter][new line][number" +
+    "s]\" please):\r\n";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(92, 182);
+			this.label2.Location = new System.Drawing.Point(92, 228);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(40, 13);
 			this.label2.TabIndex = 3;
@@ -75,7 +75,7 @@
 			// AnswerLbl
 			// 
 			this.AnswerLbl.AutoSize = true;
-			this.AnswerLbl.Location = new System.Drawing.Point(132, 207);
+			this.AnswerLbl.Location = new System.Drawing.Point(154, 228);
 			this.AnswerLbl.Name = "AnswerLbl";
 			this.AnswerLbl.Size = new System.Drawing.Size(0, 13);
 			this.AnswerLbl.TabIndex = 4;

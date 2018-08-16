@@ -23,7 +23,7 @@ namespace StringCalculatorTDD
 			{
 				AnswerLbl.Text = Calculator.Add(InputBox.Text).ToString();
 			}
-			catch (FormatException ex)
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}

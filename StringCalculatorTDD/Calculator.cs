@@ -13,15 +13,30 @@ namespace StringCalculatorTDD
 		{
 			string[] numbersArray = numbers.Split(delimiters.ToCharArray());
 			int summedAnswer = 0;
+			List<string> negativeNumbers = new List<string>();
 
 			foreach (string number in numbersArray)
 			{
 				if (number.Trim(' ').Length != 0)
 				{
-					summedAnswer += int.Parse(number);
+					if (int.Parse(number) >= 0)
+					{
+						summedAnswer += int.Parse(number);
+					}
+					else
+					{
+						negativeNumbers.Add(number);
+					}
 				}
 			}
-			return summedAnswer;
+			if (negativeNumbers.Count > 0)
+			{
+				throw new CannotReadNegativeNumbersException(negativeNumbers.ToArray());
+			}
+			else
+			{
+				return summedAnswer;
+			}
 		}
 
 		public static int Add(string numbers)

@@ -56,5 +56,29 @@ namespace StringCalculatorTest
 		{
 			Assert.AreEqual(3 + 20 + 1, Calculator.Add("//;\n3;20;1"));
 		}
+
+		[TestMethod]
+		[ExpectedException(typeof(CannotReadNegativeNumbersException))]
+		public void WhenNegativeNumberIsUsedThenExceptionIsThrown()
+		{
+			Calculator.Add("9,-6,2");
+		}
+
+		[TestMethod]
+		public void WhenNegativeNumbersAreUsedThenExceptionIsThrown()
+		{
+			string message = "";
+			try
+			{
+				Calculator.Add("9, -6, -7, 5");
+			}
+			catch (CannotReadNegativeNumbersException ex)
+			{
+				message = ex.Message;
+			}
+			Assert.AreNotEqual(message, "");
+			Assert.IsTrue(message.Contains("-6"));
+			Assert.IsTrue(message.Contains("-7"));
+		}
 	}
 }
