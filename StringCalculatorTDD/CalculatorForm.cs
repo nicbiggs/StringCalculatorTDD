@@ -17,11 +17,23 @@ namespace StringCalculatorTDD
 			InitializeComponent();
 		}
 
-		private void SubmitBtn_Click(object sender, EventArgs e)
+		private void AddBtn_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				AnswerLbl.Text = Calculator.Add(InputBox.Text).ToString();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void SubtractBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				AnswerLbl.Text = Calculator.Subtract(InputBox.Text).ToString();
 			}
 			catch (Exception ex)
 			{

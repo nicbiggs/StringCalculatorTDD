@@ -8,7 +8,15 @@ namespace StringCalculatorTDD
 {
 	public static class ParseInput
 	{
-		public static string[] GetDelimiters(string numbers)
+		public static int[] GetNumbers(string rawInput)
+		{
+			string[] delimiters = GetDelimiters(rawInput);
+			string numbersWithoutDelimiter = GetNumberString(rawInput);
+
+			return GetNumbers(numbersWithoutDelimiter, delimiters);
+		}
+
+		private static string[] GetDelimiters(string numbers)
 		{
 			string[] delims = ParseDelimiters(GetDelimiterString(numbers));
 			if (delims.Length > 1 || (delims.Length == 1 && delims[0] != ""))
@@ -65,7 +73,7 @@ namespace StringCalculatorTDD
 			}
 		}
 
-		public static string GetNumberString(string numbers)
+		private static string GetNumberString(string numbers)
 		{
 			return numbers.Substring(GetStartOfNumbers(numbers));
 		}
@@ -82,7 +90,7 @@ namespace StringCalculatorTDD
 			}
 		}
 
-		public static int[] GetNumbers(string numbers, string[] delimiters)
+		private static int[] GetNumbers(string numbers, string[] delimiters)
 		{
 			List<int> numberInts = new List<int>();
 			string[] numberArray = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);

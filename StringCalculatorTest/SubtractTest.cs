@@ -5,12 +5,12 @@ using StringCalculatorTDD;
 namespace StringCalculatorTest
 {
 	[TestClass]
-	public class CalculatorTest
+	public class SubtractTest
 	{
 		[TestMethod]
 		public void When2NumbersAreUsedThenNoExceptionIsThrown()
 		{
-			Calculator.Add("1,2");
+			Calculator.Subtract("1,2");
 			Assert.IsTrue(true);
 		}
 
@@ -18,50 +18,50 @@ namespace StringCalculatorTest
 		[ExpectedException(typeof(FormatException))]
 		public void WhenNonNumberIsUsedThenExceptionIsThrown()
 		{
-			Calculator.Add("1,t");
+			Calculator.Subtract("1,t");
 		}
 
 		[TestMethod]
 		public void WhenEmptyStringIsUsedThenReturnZero()
 		{
-			Assert.AreEqual(0,Calculator.Add(""));
+			Assert.AreEqual(0, Calculator.Subtract(""));
 		}
 
 		[TestMethod]
 		public void WhenOneNumberIsUsedReturnsThatNumber()
 		{
-			Assert.AreEqual(3, Calculator.Add("3"));
+			Assert.AreEqual(3, Calculator.Subtract("3"));
 		}
 
 		[TestMethod]
-		public void WhenTwoNumbersAreUsedReturnsTheSumOfThoseNumbers()
+		public void WhenTwoNumbersAreUsedReturnsTheDifferenceOfThoseNumbers()
 		{
-			Assert.AreEqual(5 + 7, Calculator.Add("5,7"));
+			Assert.AreEqual(5 - 7, Calculator.Subtract("5,7"));
 		}
 
 		[TestMethod]
-		public void WhenMultipleNumbersAreUsedReturnsTheSumOfThoseNumbers()
+		public void WhenMultipleNumbersAreUsedReturnsTheDifferenceOfThoseNumbers()
 		{
-			Assert.AreEqual(5 + 17 + 2 + 81 + 6, Calculator.Add("5,17,2,81,6"));
+			Assert.AreEqual(5 - 17 - 2 - 81 - 6, Calculator.Subtract("5,17,2,81,6"));
 		}
 
 		[TestMethod]
 		public void WhenNewLinesAreUsedBetweenNumbersTreatsThemAsCommas()
 		{
-			Assert.AreEqual(5 + 7 + 8, Calculator.Add("5,7" + Environment.NewLine + "8"));
+			Assert.AreEqual(5 - 7 - 8, Calculator.Subtract("5,7" + Environment.NewLine + "8"));
 		}
 
 		[TestMethod]
 		public void WhenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers()
 		{
-			Assert.AreEqual(3 + 20 + 1, Calculator.Add("//;" + Environment.NewLine + "3;20;1"));
+			Assert.AreEqual(3 - 20 - 1, Calculator.Subtract("//;" + Environment.NewLine + "3;20;1"));
 		}
 
 		[TestMethod]
 		[ExpectedException(typeof(CannotReadNegativeNumbersException))]
 		public void WhenNegativeNumberIsUsedThenExceptionIsThrown()
 		{
-			Calculator.Add("9,-6,2");
+			Calculator.Subtract("9,-6,2");
 		}
 
 		[TestMethod]
@@ -70,7 +70,7 @@ namespace StringCalculatorTest
 			string message = "";
 			try
 			{
-				Calculator.Add("9, -6, -7, 5");
+				Calculator.Subtract("9, -6, -7, 5");
 			}
 			catch (CannotReadNegativeNumbersException ex)
 			{
@@ -84,27 +84,25 @@ namespace StringCalculatorTest
 		[TestMethod]
 		public void WhenNumbersBiggerThan1000AreUsedThenIgnore()
 		{
-			Assert.AreEqual(4+2,Calculator.Add("1200,1500,4,2"));
+			Assert.AreEqual(4 - 2, Calculator.Subtract("1200,1500,4,2"));
 		}
 
 		[TestMethod]
 		public void WhenSpecifiedDelimiterisMoreThanOneCharacterThenItIsUsedToSeparateNumbers()
 		{
-			Assert.AreEqual(5 + 15 + 30, Calculator.Add("//[----]" + Environment.NewLine + "5----15----30"));
+			Assert.AreEqual(5 - 15 - 30, Calculator.Subtract("//[----]" + Environment.NewLine + "5----15----30"));
 		}
 
 		[TestMethod]
 		public void WhenMultipleSpecifiedDelimitersAreUsedThenTheyAreUsedToSeparateNumbers()
 		{
-			Assert.AreEqual(5 + 5 + 6, Calculator.Add("//[t][c]" + Environment.NewLine + "5t5c6"));
+			Assert.AreEqual(5 - 5 - 6, Calculator.Subtract("//[t][c]" + Environment.NewLine + "5t5c6"));
 		}
 
 		[TestMethod]
 		public void WhenMultipleSpecifiedDelimitersAreMoreThanOneCharacterThenTheyAreUsedToSeparateNumbers()
 		{
-			Assert.AreEqual(5 + 5 + 6, Calculator.Add("//[tt][cc]" + Environment.NewLine + "5tt5cc6"));
+			Assert.AreEqual(5 - 5 - 6, Calculator.Subtract("//[tt][cc]" + Environment.NewLine + "5tt5cc6"));
 		}
-
-
 	}
 }

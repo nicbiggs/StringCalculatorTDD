@@ -28,22 +28,23 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SubmitBtn = new System.Windows.Forms.Button();
+			this.AddBtn = new System.Windows.Forms.Button();
 			this.InputBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.AnswerLbl = new System.Windows.Forms.Label();
+			this.SubtractBtn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// SubmitBtn
+			// AddBtn
 			// 
-			this.SubmitBtn.Location = new System.Drawing.Point(105, 264);
-			this.SubmitBtn.Name = "SubmitBtn";
-			this.SubmitBtn.Size = new System.Drawing.Size(75, 23);
-			this.SubmitBtn.TabIndex = 0;
-			this.SubmitBtn.Text = "Submit";
-			this.SubmitBtn.UseVisualStyleBackColor = true;
-			this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
+			this.AddBtn.Location = new System.Drawing.Point(12, 262);
+			this.AddBtn.Name = "AddBtn";
+			this.AddBtn.Size = new System.Drawing.Size(75, 23);
+			this.AddBtn.TabIndex = 0;
+			this.AddBtn.Text = "Add";
+			this.AddBtn.UseVisualStyleBackColor = true;
+			this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
 			// 
 			// InputBox
 			// 
@@ -80,16 +81,27 @@
 			this.AnswerLbl.Size = new System.Drawing.Size(0, 13);
 			this.AnswerLbl.TabIndex = 4;
 			// 
+			// SubtractBtn
+			// 
+			this.SubtractBtn.Location = new System.Drawing.Point(211, 262);
+			this.SubtractBtn.Name = "SubtractBtn";
+			this.SubtractBtn.Size = new System.Drawing.Size(75, 23);
+			this.SubtractBtn.TabIndex = 5;
+			this.SubtractBtn.Text = "Subtract";
+			this.SubtractBtn.UseVisualStyleBackColor = true;
+			this.SubtractBtn.Click += new System.EventHandler(this.SubtractBtn_Click);
+			// 
 			// CalculatorForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(298, 297);
+			this.Controls.Add(this.SubtractBtn);
 			this.Controls.Add(this.AnswerLbl);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.InputBox);
-			this.Controls.Add(this.SubmitBtn);
+			this.Controls.Add(this.AddBtn);
 			this.Name = "CalculatorForm";
 			this.Text = "Calculator Form";
 			this.ResumeLayout(false);
@@ -99,11 +111,12 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button SubmitBtn;
+		private System.Windows.Forms.Button AddBtn;
 		private System.Windows.Forms.TextBox InputBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label AnswerLbl;
+		private System.Windows.Forms.Button SubtractBtn;
 	}
 }
 
