@@ -94,6 +94,12 @@ namespace StringCalculatorTest
 		}
 
 		[TestMethod]
+		public void WhenMultipleSpecifiedDelimitersAreUsedThenTheyAreUsedToSeparateNumbers()
+		{
+			Assert.AreEqual(5 + 5 + 6, Calculator.Add("//[t][c]" + Environment.NewLine + "5t5c6"));
+		}
+
+		[TestMethod]
 		public void WhenMultipleSpecifiedDelimitersAreMoreThanOneCharacterThenTheyAreUsedToSeparateNumbers()
 		{
 			Assert.AreEqual(5 + 5 + 6, Calculator.Add("//[tt][cc]" + Environment.NewLine + "5tt5cc6"));
