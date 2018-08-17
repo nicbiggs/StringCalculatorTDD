@@ -23,14 +23,25 @@ namespace StringCalculatorTDD
 					endOfDelimiterIndex = numbers.IndexOf(Environment.NewLine);
 					startOfNumbers = endOfDelimiterIndex + Environment.NewLine.Length;
 				}
-				string customDelimiter = numbers.Substring(delimiterIndex, endOfDelimiterIndex - delimiterIndex);
-				customDelimiter = customDelimiter.Trim('[', ']');
-
-				delimiters = new string[] { customDelimiter };
+				string customDelimiters = numbers.Substring(delimiterIndex, endOfDelimiterIndex - delimiterIndex);
+				delimiters = ParseDelimiters(customDelimiters);
 				numbersWithoutDelimiter = numbers.Substring(startOfNumbers);
 			}
 
 			return Add(numbersWithoutDelimiter, delimiters);
+		}
+
+		private static string[] ParseDelimiters(string delimiters)
+		{
+			List<string> delims = new List<string>();
+
+			string[] unfinishedDelims = delimiters.Split(new string[] { "[" }, StringSplitOptions.RemoveEmptyEntries);
+			foreach (string delim in unfinishedDelims)
+			{
+				delims.Add(delim.Replace("]",""));
+			}
+
+			return delims.ToArray();
 		}
 
 		private static int Add(string numbers, string[] delimiters)

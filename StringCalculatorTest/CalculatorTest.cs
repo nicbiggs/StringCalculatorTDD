@@ -93,6 +93,12 @@ namespace StringCalculatorTest
 			Assert.AreEqual(5 + 15 + 30, Calculator.Add("//[----]" + Environment.NewLine + "5----15----30"));
 		}
 
+		[TestMethod]
+		public void WhenMultipleSpecifiedDelimitersAreMoreThanOneCharacterThenTheyAreUsedToSeparateNumbers()
+		{
+			Assert.AreEqual(5 + 5 + 6, Calculator.Add("//[tt][cc]" + Environment.NewLine + "5tt5cc6"));
+		}
+
 
 	}
 }
