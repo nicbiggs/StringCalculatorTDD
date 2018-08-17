@@ -1,6 +1,6 @@
 ﻿namespace StringCalculatorTDD
 {
-	partial class Form1
+	partial class CalculatorForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -80,7 +80,7 @@
 			this.AnswerLbl.Size = new System.Drawing.Size(0, 13);
 			this.AnswerLbl.TabIndex = 4;
 			// 
-			// Form1
+			// CalculatorForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,8 +90,8 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.InputBox);
 			this.Controls.Add(this.SubmitBtn);
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "CalculatorForm";
+			this.Text = "Calculator Form";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
