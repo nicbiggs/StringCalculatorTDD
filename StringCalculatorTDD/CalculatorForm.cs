@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StringCalculatorTDD
@@ -17,11 +10,17 @@ namespace StringCalculatorTDD
 			InitializeComponent();
 		}
 
+		public static string GetCalculatorString(string delims, string numbers)
+		{
+			return "//" + delims + Environment.NewLine + numbers;
+		}
+
 		private void AddBtn_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				AnswerLbl.Text = Calculator.Add(InputBox.Text).ToString();
+				string input = GetCalculatorString(DelimiterBox.Text, NumberBox.Text);
+				AnswerLbl.Text = Calculator.Add(input).ToString();
 			}
 			catch (Exception ex)
 			{
@@ -33,7 +32,8 @@ namespace StringCalculatorTDD
 		{
 			try
 			{
-				AnswerLbl.Text = Calculator.Subtract(InputBox.Text).ToString();
+				string input = GetCalculatorString(DelimiterBox.Text, NumberBox.Text);
+				AnswerLbl.Text = Calculator.Subtract(input).ToString();
 			}
 			catch (Exception ex)
 			{
