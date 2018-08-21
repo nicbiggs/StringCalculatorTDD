@@ -20,6 +20,12 @@ namespace StringCalculatorTest
 		}
 
 		[TestMethod]
+		public void WhenReadingNoDelimiterThenOutputIsCorrect()
+		{
+			Assert.AreEqual("1,2,3" + Environment.NewLine + "4", CalculatorForm.GetCalculatorString("", "1,2,3" + Environment.NewLine + "4"));
+		}
+
+		[TestMethod]
 		public void WhenReadingMultipleMulticharacterDelimitersThenOutputIsCorrect()
 		{
 			Assert.AreEqual("//[nn][zv]" + Environment.NewLine + "1zv2nn3zv4", CalculatorForm.GetCalculatorString("[nn][zv]", "1zv2nn3zv4"));

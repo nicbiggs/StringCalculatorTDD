@@ -12,7 +12,7 @@ namespace StringCalculatorTDD
 
 		public static string GetCalculatorString(string delims, string numbers)
 		{
-			return "//" + delims + Environment.NewLine + numbers;
+			return (delims == "" ? numbers : "//" + delims + Environment.NewLine + numbers);
 		}
 
 		private void AddBtn_Click(object sender, EventArgs e)
