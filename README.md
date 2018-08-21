@@ -17,3 +17,5 @@ The original example (written in Java) can be found at: https://technologyconver
 11. Delimiters can be of any length with the following format: “//[delimiter]\n” for example: “//[—]\n1—2—3” should return 6
 12. Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[-][%]\n1-2%3” should return 6.
 13. Make sure you can also handle multiple delimiters with length longer than one char
+14. Add a method int Subtract(string numbers) to the String calculator
+15. Allow Subtract method to handle all the same input as the Add method
